@@ -6,6 +6,29 @@
 <title>Claudia Alonso Jaquete – Psicóloga en Valencia</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+  .hero-image-wrap { position: relative; width: 380px; height: 480px; }
+  
+  .hero-image-bg { 
+    position: absolute; 
+    inset: 0; 
+    background: linear-gradient(145deg, var(--green-pale), var(--beige-mid)); 
+    border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%; 
+    animation: morphBlob 10s ease-in-out infinite; 
+    z-index: 1; /* El círculo se queda al fondo */
+  }
+
+  .hero-image-placeholder { 
+    position: absolute; 
+    inset: 24px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    background: linear-gradient(160deg, var(--green-light) 0%, var(--beige-mid) 100%); 
+    border-radius: 55% 45% 50% 50%/48% 52% 48% 52%; 
+    overflow: hidden;
+    z-index: 2; /* TU FOTO SE PONE DELANTE */
+  }
   :root {
     --green-deep: #4a6741;
     --green-mid: #7a9e70;
@@ -54,30 +77,6 @@
   .hero-image-wrap { position: relative; width: 380px; height: 480px; }
   .hero-image-bg { position: absolute; inset: 0; background: linear-gradient(145deg, var(--green-pale), var(--beige-mid)); border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%; animation: morphBlob 10s ease-in-out infinite; }
   @keyframes morphBlob { 0%,100%{border-radius:60% 40% 55% 45%/50% 55% 45% 50%} 33%{border-radius:45% 55% 40% 60%/55% 45% 55% 45%} 66%{border-radius:55% 45% 60% 40%/45% 55% 45% 55%} }
-  <div class="hero-image-placeholder"{ 
-    position: absolute; 
-    inset: 24px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 10px; 
-    background: linear-gradient(160deg, var(--green-light) 0%, var(--beige-mid) 100%); 
-    border-radius: 55% 45% 50% 50%/48% 52% 48% 52%; 
-    overflow: hidden;
-    z-index: 5;
-  }
-  <div class="hero-right">
-      <div class="hero-image-wrap">
-        <div class="hero-image-bg"></div>
-        <div class="hero-image-placeholder">
-          <img src="foto blanca sin fondo.png" alt="Claudia Alonso Jaquete" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div class="hero-pill p1"><span class="dot"></span> Valencia &amp; Online</div>
-        <div class="hero-pill p2"><span class="dot"></span> Perspectiva de género</div>
-      </div>
-    </div>
-</section> ```
 </div>
   .hero-pill { position: absolute; background: var(--white); border: 1px solid var(--beige-mid); border-radius: 40px; padding: 10px 18px; font-size: 12px; color: var(--ink); box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 8px; white-space: nowrap; }
   .hero-pill.p1 { bottom: 60px; left: -30px; animation: floatPill1 5s ease-in-out infinite; }
@@ -210,8 +209,9 @@
   <li><a href="#sobre-mi">Sobre mí</a></li>
   <li><a href="#especialidades">Especialidades</a></li>
   <li><a href="#servicios">Servicios</a></li>
-  <li><a href="#como-trabajo">Cómo trabajo</a></li> <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+  <li><a href="#como-trabajo">Cómo trabajo</a></li> 
   <li><a href="#opiniones">Opiniones</a></li>
+  <li><a href="#contacto" class="nav-cta">Contactar</a></li>
 </ul>
 </nav>
 
@@ -219,21 +219,19 @@
   <div class="hero-bg-circle c1"></div>
   <div class="hero-bg-circle c2"></div>
   <div class="hero-left">
-    <span class="hero-tag">Psicóloga · Valencia &amp; Online</span>
-    <h1 class="hero-title">Un espacio donde <em>ser, descubrirte,</em> cuidarte</h1>
-    <p class="hero-bio">Soy Claudia y, si me dejas, quiero acompañarte a sentirte; mejorando tu relación contigo mismx, tu historia y tus vínculos.</p>
-    <p class="hero-hook">"Si sientes que es momento de empezar un proceso, o simplemente quieres saber si este espacio es para ti, estaré encantada de hablar contigo. Aquí hay lugar para lo que necesites traer."</p>
-    <div class="hero-actions">
-      <a href="https://wa.me/34676827347" class="btn-primary">Escribirme por WhatsApp</a>
-      <a href="#sobre-mi" class="btn-secondary">Conóceme</a>
-    </div>
+    ...
   </div>
+
   <div class="hero-right">
     <div class="hero-image-wrap">
       <div class="hero-image-bg"></div>
-<div class="hero-image-placeholder">
-  <img src="foto blanca sin fondo.png" alt="Claudia Alonso Jaquete" style="width: 100%; height: 100%; object-fit: cover;">
-</div>
+      <div class="hero-image-placeholder">
+        <img src="foto blanca sin fondo.png" alt="Claudia Alonso Jaquete" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="hero-pill p1"><span class="dot"></span> Valencia &amp; Online</div>
+      <div class="hero-pill p2"><span class="dot"></span> Perspectiva de género</div>
+    </div>
+  </div>
 </section>
 
 <section class="about" id="sobre-mi">
