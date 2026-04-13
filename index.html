@@ -304,23 +304,13 @@
     .nav-links { display: none; }
     .hamburger { display: flex; }
 
-    /* Hero: stack vertically, show photo */
-    .hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-      padding-top: 68px;
-    }
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 68px; }
     .hero-left { padding: 52px 28px 36px; }
-    .hero-right {
-      display: flex;
-      padding: 0 28px 52px;
-      justify-content: center;
-    }
+    .hero-right { display: flex; padding: 0 28px 52px; justify-content: center; }
     .hero-image-wrap { width: 280px; height: 340px; }
     .hero-pill.p1 { left: -10px; bottom: 30px; font-size: 11px; padding: 8px 14px; }
     .hero-pill.p2 { right: -10px; top: 20px; font-size: 11px; padding: 8px 14px; }
 
-    /* Sections */
     .about { grid-template-columns: 1fr; padding: 60px 28px; gap: 36px; }
     .approach-section { padding: 60px 28px; }
     .approach-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -349,7 +339,6 @@
   @media (max-width: 480px) {
     .nav-logo { font-size: 0.88rem; }
 
-    /* Hero fully stacked */
     .hero-left { padding: 40px 20px 28px; }
     .hero-tag { font-size: 10px; margin-bottom: 18px; }
     .hero-title { font-size: 2rem; margin-bottom: 16px; }
@@ -360,21 +349,17 @@
     .hero-right { padding: 0 20px 44px; }
     .hero-image-wrap { width: 240px; height: 300px; }
 
-    /* Sections spacing */
     .about, .specialties, .services, .process,
     .reviews, .contact, .approach-section { padding: 48px 20px; }
 
-    /* About */
     .about-title { font-size: 1.7rem; }
     .about-text { font-size: 14px; }
     .about-card { padding: 18px 20px; }
 
-    /* Enfoque */
     .approach-section-title { font-size: 1.5rem; }
     .approach-section-sub { font-size: 14px; margin-bottom: 28px; }
     .approach-card { padding: 24px 20px; }
 
-    /* Especialidades */
     .specialties-title { font-size: 1.6rem; }
     .spec-grid { grid-template-columns: 1fr; gap: 12px; }
     .spec-card { padding: 22px 18px; }
@@ -388,7 +373,6 @@
     .extra-block { padding: 20px 18px; }
     .extra-block h3 { font-size: 1rem; }
 
-    /* Servicios */
     .services-title { font-size: 1.6rem; }
     .services-sub { font-size: 13.5px; }
     .service-card { padding: 28px 20px; }
@@ -396,7 +380,6 @@
     .service-price { font-size: 1.7rem; }
     .btn-green { width: 100%; text-align: center; }
 
-    /* Cómo trabajo */
     .process-title { font-size: 1.6rem; }
     .process-philosophy { font-size: 13.5px; margin-bottom: 36px; }
     .process-steps { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -408,7 +391,6 @@
     .commitment-card-title { font-size: 1.2rem; }
     .commitment-card-text { font-size: 13px; }
 
-    /* Opiniones */
     .reviews-title { font-size: 1.6rem; }
     .reviews-sub { font-size: 14px; margin-bottom: 32px; }
     .testimonial-card { padding: 20px 18px; }
@@ -416,19 +398,33 @@
     .reviews-links { flex-direction: column; align-items: center; gap: 12px; }
     .review-link { width: 100%; max-width: 320px; padding: 18px 24px; }
 
-    /* Contacto */
+    /* ── CONTACTO MOBILE FIX ── */
     .contact-title { font-size: 1.8rem; margin-bottom: 28px; }
     .contact-hook { font-size: 15px; padding: 16px 18px; margin-bottom: 36px; }
-    .contact-grid { flex-direction: column; align-items: center; gap: 12px; }
-    .contact-card { width: 100%; max-width: 320px; padding: 18px 20px; flex-direction: row; gap: 16px; text-align: left; }
+    .contact-grid {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+    .contact-card {
+      width: 100%;
+      max-width: 340px;
+      padding: 16px 20px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      text-align: left;
+    }
+    .contact-card-icon { font-size: 24px; flex-shrink: 0; }
     .contact-card-label { margin-bottom: 2px; }
+    .contact-card-value { font-size: 12.5px; word-break: break-word; }
 
-    /* Mapa */
     .map-section { padding: 0 20px 44px; }
     .map-card { padding: 16px 18px; gap: 14px; }
     .map-thumb { width: 52px; height: 52px; font-size: 22px; border-radius: 10px; }
 
-    /* Footer */
     footer { padding: 18px 20px; }
     .footer-name { font-size: 0.9rem; }
   }
@@ -838,7 +834,6 @@
 </footer>
 
 <script>
-  // ── Scroll reveal ──
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -850,7 +845,6 @@
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
 
-  // ── Hamburger menu ──
   const mobileNav = document.getElementById('mobileNav');
   const hamburger = document.getElementById('hamburger');
 
@@ -873,7 +867,6 @@
     setTimeout(() => { mobileNav.style.display = 'none'; }, 300);
   }
 
-  // Close on resize back to desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth > 900) closeMobileNav();
   });
