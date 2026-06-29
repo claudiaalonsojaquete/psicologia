@@ -166,6 +166,7 @@
   .about-title em { font-style: italic; color: var(--green-deep); }
   .about-text { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--muted); margin-bottom: 14px; }
   .about-subtitle { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; color: var(--green-deep); margin: 24px 0 10px; }
+  .about-credential { font-size: 13px; font-weight: 400; color: var(--green-deep); margin-top: 8px; letter-spacing: 0.02em; }
   .about-values { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 28px; }
   .value-chip { background: var(--green-pale); color: var(--green-deep); font-size: 12px; font-weight: 400; padding: 6px 14px; border-radius: 20px; }
   .about-right { display: flex; flex-direction: column; gap: 16px; }
@@ -201,7 +202,7 @@
   .spec-desc { font-size: 13.5px; line-height: 1.6; color: var(--muted); font-weight: 300; }
 
   /* ── NO MONOGAMIAS ── */
-  .nomo-block { background: var(--green-deep); border-radius: var(--radius); padding: 48px 52px; margin-bottom: 40px; position: relative; overflow: hidden; }
+  .nomo-block { background: var(--green-deep); border-radius: var(--radius); padding: 48px 52px; margin-bottom: 40px; position: relative; overflow: hidden; scroll-margin-top: 90px; }
   .nomo-block::before { content:'♾️'; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); font-size: 120px; opacity: 0.08; pointer-events: none; }
   .nomo-tag { display: inline-block; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; }
   .nomo-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; color: var(--white); line-height: 1.25; margin-bottom: 16px; }
@@ -303,6 +304,8 @@
   /* ── FOOTER ── */
   footer { padding: 24px 80px; background: var(--ink); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
   .footer-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: rgba(255,255,255,0.75); }
+  .footer-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+  .footer-credential { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 400; letter-spacing: 0.03em; }
   .footer-text { font-size: 12px; color: rgba(255,255,255,0.3); font-weight: 300; }
 
   /* ── ANIMATIONS ── */
@@ -345,6 +348,7 @@
     .contact-grid { gap: 12px; }
     .map-section { padding: 0 28px 48px; }
     footer { padding: 20px 28px; flex-direction: column; text-align: center; gap: 6px; }
+    .footer-meta { align-items: center; }
   }
 
   /* ══════════════════════════════════════
@@ -455,6 +459,7 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="#sobre-mi" onclick="closeMobileNav()">Sobre mí</a>
   <a href="#especialidades" onclick="closeMobileNav()">Especialidades</a>
+  <a href="#no-monogamia" onclick="closeMobileNav()">Relaciones No Monógamas</a>
   <a href="#servicios" onclick="closeMobileNav()">Servicios</a>
   <a href="#como-trabajo" onclick="closeMobileNav()">Cómo trabajo</a>
   <a href="#opiniones" onclick="closeMobileNav()">Opiniones</a>
@@ -480,7 +485,7 @@
         <a href="#especialidades"><span class="dropdown-icon">😔</span> Depresión y Estado de Ánimo</a>
         <a href="#especialidades"><span class="dropdown-icon">💔</span> Duelo y Pérdidas</a>
         <div class="dropdown-divider"></div>
-        <a href="#especialidades"><span class="dropdown-icon">♾️</span> Relaciones No Monógamas</a>
+        <a href="#no-monogamia"><span class="dropdown-icon">♾️</span> Relaciones No Monógamas</a>
       </div>
     </li>
     <li class="has-dropdown">
@@ -541,6 +546,7 @@
     <h3 class="about-subtitle">Aprendiendo desde la teoría y la experiencia</h3>
     <p class="about-text">La vida me llevó a cruzar el charco y convertirme yo también en migrante en México. Vivir en primera persona el choque cultural y la adaptación me dio una perspectiva que ningún libro puede enseñar. Aproveché mi estancia en una de las mayores potencias psicológicas de Latinoamérica para absorber nuevos enfoques, técnicas y, sobre todo, para aprender de la riqueza de otras culturas.</p>
     <p class="about-text">A mi vuelta a España, me especialicé inicialmente en el campo de las adicciones, y después amplié mi práctica hacia el acompañamiento a todo tipo de personas y parejas desde una mirada humana y profunda. No busco solo "quitar lo que duele": mi objetivo es que entendamos de dónde venimos para sanar desde la raíz.</p>
+    <p class="about-credential">Psicóloga colegiada Nº CV17553 · Col·legi Oficial de Psicologia de la Comunitat Valenciana (COP-CV)</p>
     <div class="about-values">
       <span class="value-chip">Sin juicios</span>
       <span class="value-chip">Interseccional</span>
@@ -656,7 +662,7 @@
       <div class="spec-desc">Acompañamiento en procesos de duelo por pérdidas afectivas, rupturas, cambios vitales o pérdidas no reconocidas socialmente.</div>
     </div>
   </div>
-  <div class="nomo-block reveal">
+  <div class="nomo-block reveal" id="no-monogamia">
     <div class="nomo-tag">Especialidad destacada</div>
     <h3 class="nomo-title">Relaciones <em>No Monógamas</em></h3>
     <p class="nomo-hook">"¿Cansadx de explicarle a tu psicólogx cómo funciona tu relación? Aquí hablamos tu mismo idioma."</p>
@@ -857,7 +863,10 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-name">Claudia Alonso Jaquete — Psicóloga</div>
-  <div class="footer-text">© 2025 · Valencia &amp; Online · Todos los derechos reservados</div>
+  <div class="footer-meta">
+    <div class="footer-credential">Nº Col. CV17553 · COP-CV</div>
+    <div class="footer-text">© 2025 · Valencia &amp; Online · Todos los derechos reservados</div>
+  </div>
 </footer>
 
 <script>
