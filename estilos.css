@@ -466,8 +466,10 @@
     .footer-links { justify-content: center; }
     .footer-main { align-items: center; }
     .btn-nomo-ghost { margin-left: 0; margin-top: 10px; }
+    .hero-image-placeholder img { width: 100% !important; height: 100% !important; object-fit: cover; object-position: center 8%; }
   }
   @media (max-width: 480px) {
+    .hero-image-wrap { width: 270px; height: 330px; }
     .modes { padding: 40px 20px 8px; }
     .faq-section { padding: 48px 20px; }
     details.faq-item summary { font-size: 14px; padding: 16px 46px 16px 18px; }
