@@ -533,6 +533,18 @@
   .legal th { width: 34%; font-weight: 500; color: var(--ink); }
   mark.completar { background: #fff3b0; color: #6a5300; padding: 1px 6px; border-radius: 4px; font-weight: 500; }
 
+  .post-list { display: grid; gap: 16px; margin-top: 24px; }
+  .post-card { display: block; background: var(--white); border: 1px solid var(--beige-mid); border-radius: var(--radius); padding: 26px 28px; text-decoration: none; color: var(--ink); transition: transform .2s, border-color .2s; }
+  .post-card:hover { transform: translateY(-3px); border-color: var(--green-light); }
+  .post-card h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 500; color: var(--green-deep); margin: 6px 0 8px; }
+  .post-card p { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--muted); }
+  .post-meta { font-size: 12px; letter-spacing: 0.05em; color: var(--muted); }
+  .post-body h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 500; color: var(--green-deep); margin: 34px 0 10px; }
+  .post-body p, .post-body li { font-size: 15.5px; font-weight: 300; line-height: 1.9; color: var(--muted); margin-bottom: 14px; }
+  .post-body ul { padding-left: 22px; }
+  .post-body a { color: var(--green-deep); }
+  .post-body strong { font-weight: 500; color: var(--ink); }
+
   @media (max-width: 900px) {
     .sub-hero { padding: 104px 28px 40px; }
     .sub-section { padding: 44px 28px; }
