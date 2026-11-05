@@ -536,7 +536,7 @@
   .post-list { display: grid; gap: 16px; margin-top: 24px; }
   .post-card { display: block; background: var(--white); border: 1px solid var(--beige-mid); border-radius: var(--radius); padding: 26px 28px; text-decoration: none; color: var(--ink); transition: transform .2s, border-color .2s; }
   .post-card:hover { transform: translateY(-3px); border-color: var(--green-light); }
-  .post-card h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 500; color: var(--green-deep); margin: 6px 0 8px; }
+  .post-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 500; color: var(--green-deep); margin: 6px 0 8px; }
   .post-card p { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--muted); }
   .post-meta { font-size: 12px; letter-spacing: 0.05em; color: var(--muted); }
   .post-body h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 500; color: var(--green-deep); margin: 34px 0 10px; }
