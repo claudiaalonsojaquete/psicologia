@@ -554,31 +554,38 @@
   .prot-bar { height: 5px; background: var(--beige-mid); border-radius: 5px; overflow: hidden; margin-bottom: 22px; }
   .prot-bar span { display: block; height: 100%; width: 0; background: var(--green-light); transition: width .3s; }
   .prot-link { font-family: inherit; font-size: 13px; background: none; border: none; color: var(--green-deep); text-decoration: underline; cursor: pointer; padding: 6px 2px; }
-  .prot-stack { position: relative; outline: none; padding-bottom: 14px; }
-  .prot-stack::before, .prot-stack::after { content: ''; position: absolute; left: 14px; right: 14px; bottom: 0; top: 14px; background: var(--white); border: 1px solid var(--beige-mid); border-radius: 22px; z-index: 0; }
-  .prot-stack::after { left: 28px; right: 28px; bottom: -12px; top: 28px; opacity: .6; }
-  .prot-stack:focus-visible .prot-cardx { outline: 3px solid var(--green-light); outline-offset: 3px; }
-  .prot-cardx { position: relative; z-index: 2; background: var(--white); border: 1px solid var(--beige-mid); border-radius: 22px; padding: 34px 28px 24px; min-height: 340px; box-shadow: 0 10px 34px rgba(74,103,65,0.12); touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; display: flex; flex-direction: column; align-items: flex-start; --yes: 0; --no: 0; }
+  .prot-stack { position: relative; outline: none; padding-bottom: 16px; }
+  .prot-stack::before, .prot-stack::after { content: ''; position: absolute; left: 14px; right: 14px; bottom: 2px; top: 14px; background: var(--green-light); opacity: .5; border-radius: 24px; z-index: 0; }
+  .prot-stack::after { left: 28px; right: 28px; bottom: -10px; top: 28px; opacity: .28; }
+  .prot-stack:focus-visible .prot-cardx { outline: 3px solid var(--green-light); outline-offset: 4px; }
+  .prot-cardx { position: relative; z-index: 2; background: var(--green-deep); color: #fff; border-radius: 24px; padding: 36px 28px 26px; box-shadow: 0 14px 38px rgba(74,103,65,0.30); touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; --yes: 0; --no: 0; }
   .prot-cardx.dragging { cursor: grabbing; }
-  .prot-cardx::after { content: ''; position: absolute; inset: 0; border-radius: 22px; pointer-events: none; background: linear-gradient(90deg, rgba(160,160,150,calc(var(--no)*.28)), rgba(116,170,104,calc(var(--yes)*.30))); }
-  .prot-stamp { position: absolute; top: 20px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; padding: 5px 12px; border-radius: 8px; border: 2px solid; pointer-events: none; z-index: 3; }
-  .prot-stamp.yes { right: 20px; color: var(--green-deep); border-color: var(--green-deep); opacity: var(--yes); transform: rotate(6deg); }
-  .prot-stamp.no { left: 20px; color: var(--muted); border-color: var(--muted); opacity: var(--no); transform: rotate(-6deg); }
-  .prot-kicker { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--beige-dark); margin: 6px 0 14px; font-weight: 500; }
-  .prot-cardx h2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; line-height: 1.2; font-weight: 500; color: var(--green-deep); margin: 0 0 16px; }
-  .post-body .prot-cardx .prot-desc { font-size: 17px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
-  .prot-tag { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; background: var(--beige-mid); color: var(--muted); border-radius: 20px; padding: 2px 10px; position: absolute; top: 22px; left: 28px; }
-  .prot-detail { border-top: 1px solid var(--beige-mid); margin-top: 8px; padding-top: 12px; width: 100%; user-select: text; -webkit-user-select: text; }
+  .prot-cardx::after { content: ''; position: absolute; inset: 0; border-radius: 24px; pointer-events: none; background: linear-gradient(90deg, rgba(0,0,0,calc(var(--no)*.28)), rgba(255,255,255,0) 45%, rgba(255,255,255,0) 55%, rgba(255,255,255,calc(var(--yes)*.22))); }
+  .prot-stamp { position: absolute; top: 18px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; padding: 5px 12px; border-radius: 8px; border: 2px solid #fff; color: #fff; pointer-events: none; z-index: 3; }
+  .prot-stamp.yes { right: 18px; opacity: var(--yes); transform: rotate(6deg); }
+  .prot-stamp.no { left: 18px; opacity: var(--no); transform: rotate(-6deg); }
+  .post-body .prot-cardx .prot-kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); margin: 14px 0 12px; font-weight: 500; }
+  .prot-cardx h2 { font-family: 'Playfair Display', serif; font-size: 2rem; line-height: 1.2; font-weight: 500; color: #fff; margin: 0 0 14px; }
+  .post-body .prot-cardx .prot-desc { font-size: 18px; line-height: 1.55; color: #fff; margin-bottom: 0; font-weight: 300; }
+  .prot-detail { border-top: 1px solid rgba(255,255,255,.3); margin-top: 20px; padding-top: 18px; }
+  .post-body .prot-cardx .prot-detail p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.94); margin-bottom: 14px; }
+  .prot-cardx .prot-detail strong { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.72); font-weight: 500; margin-bottom: 3px; }
+  .post-body .prot-cardx .prot-detail .prot-nota { background: rgba(255,255,255,.15); color: #fff; font-size: 13px; margin-bottom: 0; }
   .post-body .prot-detail p, .post-body .prot-list p { font-size: 14.5px; line-height: 1.65; margin-bottom: 8px; }
   .post-body .prot-nota { font-size: 13px; background: var(--beige); border-radius: 8px; padding: 8px 12px; }
-  .prot-controls { display: flex; gap: 10px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
-  .prot-act, .prot-btn { font-family: inherit; font-size: 14px; padding: 12px 20px; border-radius: 40px; border: 1.5px solid var(--green-deep); background: var(--white); color: var(--green-deep); cursor: pointer; transition: background .2s, color .2s; }
-  .prot-act.yes, .prot-btn:not(.alt) { background: var(--green-deep); color: var(--white); }
-  .prot-act.no { border-color: var(--beige-dark); color: var(--muted); }
-  .prot-act.back { border-color: var(--beige-mid); color: var(--muted); padding-left: 16px; padding-right: 16px; }
-  .prot-act:hover:not(:disabled), .prot-btn:hover { background: var(--green-pale); color: var(--green-deep); }
-  .prot-act:disabled { opacity: .4; cursor: default; }
-  .prot-link:focus-visible, .prot-act:focus-visible, .prot-btn:focus-visible, .prot-end h2:focus-visible, .prot-all summary:focus-visible { outline: 3px solid var(--green-light); outline-offset: 2px; }
+  .prot-controls { display: flex; gap: 14px; justify-content: center; align-items: flex-start; margin-top: 28px; }
+  .prot-ctl { width: 96px; background: none; border: none; font-family: inherit; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; color: var(--muted); font-size: 13px; line-height: 1.3; padding: 0; }
+  .prot-ctl .ic { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; border: 2px solid var(--beige-dark); background: var(--white); color: var(--muted); transition: transform .15s; }
+  .prot-ctl.yes .ic { background: var(--green-deep); border-color: var(--green-deep); color: #fff; }
+  .prot-ctl.yes { color: var(--green-deep); font-weight: 500; }
+  .prot-ctl.back { margin-top: 8px; }
+  .prot-ctl.back .ic { width: 48px; height: 48px; font-size: 20px; border-color: var(--beige-mid); }
+  .prot-ctl:hover:not(:disabled) .ic { transform: scale(1.07); }
+  .prot-ctl:disabled { opacity: .35; cursor: default; }
+  .prot-btn { font-family: inherit; font-size: 14px; padding: 12px 20px; border-radius: 40px; border: 1.5px solid var(--green-deep); background: var(--white); color: var(--green-deep); cursor: pointer; transition: background .2s, color .2s; }
+  .prot-btn:not(.alt) { background: var(--green-deep); color: var(--white); }
+  .prot-btn:hover { background: var(--green-pale); color: var(--green-deep); }
+  .prot-link:focus-visible, .prot-ctl:focus-visible, .prot-btn:focus-visible, .prot-end h2:focus-visible, .prot-all summary:focus-visible { outline: 3px solid var(--green-light); outline-offset: 2px; }
   .prot-end { background: var(--white); border: 1px solid var(--green-light); border-radius: 18px; padding: 8px 22px 22px; }
   .post-body .prot-end h2 { margin-top: 18px; outline: none; }
   .prot-list { list-style: none; padding: 0 !important; margin: 14px 0; }
@@ -591,7 +598,7 @@
   .prot-all summary { cursor: pointer; color: var(--green-deep); font-size: 14.5px; }
   .prot-all ul { margin-top: 14px; }
   .prot-credit { font-size: 13px !important; border-top: 1px solid var(--beige-mid); padding-top: 18px; margin-top: 30px; }
-  @media (max-width: 600px) { .prot-cardx { padding: 32px 22px 22px; min-height: 320px; } .prot-cardx h2 { font-size: 1.65rem; } .prot-controls .back { order: 3; flex-basis: 100%; } }
+  @media (max-width: 600px) { .prot-cardx { padding: 32px 22px 22px; } .prot-cardx h2 { font-size: 1.75rem; } .post-body .prot-cardx .prot-desc { font-size: 17px; } }
   @media (prefers-reduced-motion: reduce) { .prot-bar span { transition: none; } }
   @media print { nav, .mobile-nav, footer, .sub-hero, .prot-top, .prot-bar, .prot-deck, .prot-actions, .prot-all, .prot-priv, .cta-band { display: none !important; } .prot-end { border: none; } .prot-list details > *:not(summary) { display: block; } }
 
