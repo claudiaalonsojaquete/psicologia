@@ -622,3 +622,94 @@
     .legal th, .legal td { display: block; width: 100%; padding: 6px 0; }
     .legal th { border-bottom: none; padding-top: 12px; }
   }
+
+.reg-sheet{background:#fff;color:#2c2c2c;font-family:'DM Sans',system-ui,sans-serif;font-size:13px;line-height:1.45}
+.reg-page{padding:0}
+.reg-sheet h2,.reg-sheet h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;color:#3d5a37;margin:0}
+.reg-head{border-bottom:2px solid #7ea271;padding-bottom:8px;margin-bottom:14px}
+.reg-head h2{font-size:22px}
+.reg-head p{margin:2px 0 0;font-size:12px;color:#6b6b60}
+.reg-row{display:grid;gap:12px;margin-bottom:12px}
+.reg-row.two{grid-template-columns:1fr 1fr}
+.reg-row.three{grid-template-columns:2fr 1fr}
+.reg-f{border:1px solid #cfc7b4;border-radius:10px;padding:8px 11px;min-height:56px}
+.reg-f b{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#6b6b60;font-weight:500;margin-bottom:2px}
+.reg-f small{display:block;color:#8a8a7d;font-size:11px}
+.reg-f.tall{min-height:84px}
+.reg-f.big{min-height:96px}
+.reg-scale{display:flex;gap:4px;margin-top:6px}
+.reg-scale span{flex:1;text-align:center;border:1px solid #cfc7b4;border-radius:6px;font-size:11px;padding:2px 0;color:#6b6b60}
+.reg-sesgos{columns:2;column-gap:14px;font-size:11.5px;margin:4px 0 0;padding:0;list-style:none}
+.reg-sesgos li{break-inside:avoid;padding:0}
+.reg-sesgos li:before{content:'\25A2\00a0';color:#7ea271}
+.reg-foot{margin-top:12px;font-size:10.5px;color:#8a8a7d;border-top:1px solid #e4dfd0;padding-top:6px}
+.reg-guide{width:100%;border-collapse:collapse;font-size:10px;line-height:1.25}
+.reg-guide td{border-bottom:1px solid #e4dfd0;padding:1.5px 8px 1.5px 0;vertical-align:top}
+.reg-guide td:first-child{width:34%;font-weight:600;color:#3d5a37}
+.reg-guide td:first-child small{display:block;font-weight:400;color:#8a8a7d;font-size:8.5px}
+.reg-break{page-break-after:always;break-after:page}
+@media (max-width:620px){.reg-row.two,.reg-row.three{grid-template-columns:1fr}.reg-sesgos{columns:1}}
+
+  /* ── Entrada interactiva: sesgos cognitivos (test) ── */
+  .ses-app[hidden], .ses-q[hidden], .ses-end[hidden], .ses-res[hidden], #ses-empty[hidden] { display: none; }
+  .ses-app { max-width: 560px; margin: 26px auto 34px; }
+  .ses-top { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .ses-score { color: var(--green-deep); font-weight: 500; }
+  .ses-bar { height: 5px; background: var(--beige-mid); border-radius: 5px; overflow: hidden; margin-bottom: 22px; }
+  .ses-bar span { display: block; height: 100%; width: 0; background: var(--green-light); transition: width .3s; }
+  .ses-bubble { background: var(--white); border: 1px solid var(--beige-mid); border-radius: 22px; padding: 26px 26px 22px; position: relative; box-shadow: 0 8px 28px rgba(74,103,65,0.08); }
+  .ses-bubble::after { content: ''; position: absolute; left: 38px; bottom: -11px; width: 20px; height: 20px; background: var(--white); border-right: 1px solid var(--beige-mid); border-bottom: 1px solid var(--beige-mid); transform: rotate(45deg); }
+  .ses-kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--beige-dark); font-weight: 500; margin: 0 0 8px !important; }
+  .post-body .ses-bubble blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; line-height: 1.4; color: var(--green-deep); margin: 0; padding: 0; border: none; }
+  .post-body .ses-ask { margin: 30px 0 12px; font-size: 15px; color: var(--muted); }
+  .ses-opts { display: grid; gap: 10px; }
+  .ses-opt { font-family: inherit; font-size: 15.5px; text-align: left; padding: 14px 18px; border-radius: 14px; border: 1.5px solid var(--beige-dark); background: var(--white); color: var(--ink); cursor: pointer; transition: background .15s, border-color .15s; }
+  .ses-opt:hover:not(:disabled) { background: var(--green-pale); border-color: var(--green-light); }
+  .ses-opt:disabled { cursor: default; opacity: .6; }
+  .ses-opt.right { background: var(--green-deep); border-color: var(--green-deep); color: #fff; opacity: 1; }
+  .ses-opt.wrong { border-style: dashed; opacity: 1; background: var(--beige); text-decoration: line-through; text-decoration-thickness: 1px; }
+  .ses-mark { font-weight: 600; }
+  .ses-res { margin-top: 22px; background: var(--green-pale); border-radius: 18px; padding: 20px 22px 22px; outline: none; }
+  .post-body .ses-res p { font-size: 15px; line-height: 1.65; margin-bottom: 10px; }
+  .post-body .ses-res .ses-verdict { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--green-deep); font-weight: 500; margin-bottom: 4px; }
+  .post-body .ses-res h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 500; color: var(--green-deep); margin: 0 10px 8px 0; display: inline-block; }
+  .ses-tag { white-space: nowrap; display: inline-block; margin-bottom: 8px; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; background: var(--white); color: var(--muted); border-radius: 20px; padding: 3px 10px; vertical-align: middle; }
+  .ses-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .ses-btn, .ses-actions a.ses-btn { font-family: inherit; font-size: 14px; padding: 12px 22px; border-radius: 40px; border: 1.5px solid var(--green-deep); background: var(--green-deep); color: #fff; cursor: pointer; text-decoration: none; display: inline-block; transition: background .2s, color .2s; }
+  .ses-btn.alt { background: var(--white); color: var(--green-deep); }
+  .ses-btn.alt[aria-pressed="true"] { background: var(--green-light); color: #fff; border-color: var(--green-light); }
+  .ses-btn:hover { background: var(--green-light); border-color: var(--green-light); color: #fff; }
+  .ses-opt:focus-visible, .ses-btn:focus-visible { outline: 3px solid var(--green-light); outline-offset: 2px; }
+  .ses-end { background: var(--white); border: 1px solid var(--green-light); border-radius: 18px; padding: 8px 22px 22px; }
+  .post-body .ses-end h2 { margin-top: 18px; outline: none; }
+  .post-body .ses-end h3 { font-size: 1.05rem; margin: 18px 0 6px; }
+  .ses-list { list-style: none; padding: 0 !important; margin: 8px 0; }
+  .ses-list li { border-bottom: 1px solid var(--beige-mid); margin: 0; }
+  .ses-list summary { cursor: pointer; padding: 9px 0; font-size: 15px; }
+  .post-body .ses-list p { font-size: 14.5px; margin-bottom: 8px; }
+  .ses-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+  .post-body .ses-priv { font-size: 12.5px; margin: 0; }
+  .post-body .ses-h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 500; color: var(--green-deep); margin: 30px 0 4px; }
+  .post-body .ses-sub { font-size: 14px; margin: 0 0 4px; }
+  .ses-defs { display: grid; gap: 10px; margin: 14px 0 20px; }
+  .ses-def { background: var(--white); border: 1px solid var(--beige-mid); border-radius: 14px; transition: border-color .2s; }
+  .ses-def[open] { border-color: var(--green-light); }
+  .ses-def summary { list-style: none; cursor: pointer; padding: 14px 44px 14px 18px; position: relative; }
+  .ses-def summary::-webkit-details-marker { display: none; }
+  .ses-def summary::after { content: '+'; position: absolute; right: 18px; top: 12px; font-size: 22px; font-weight: 300; color: var(--beige-dark); }
+  .ses-def[open] summary::after { content: '–'; }
+  .ses-def summary strong { display: block; font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.1rem; color: var(--green-deep); margin-bottom: 2px; }
+  .ses-def summary span { display: block; font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+  .ses-def-in { padding: 0 18px 14px; border-top: 1px solid var(--beige-mid); margin: 0 18px; padding: 12px 0 8px; }
+  .post-body .ses-def-in p { font-size: 14.5px; line-height: 1.6; margin-bottom: 8px; }
+  .ses-def summary:focus-visible { outline: 3px solid var(--green-light); outline-offset: 2px; border-radius: 14px; }
+  .ses-frenos { margin: 12px 0 18px; padding-left: 22px; }
+  .ses-frenos li { margin-bottom: 6px; }
+  .reg-preview { background: var(--white); border: 1px solid var(--beige-mid); border-radius: 14px; padding: 22px; margin: 6px 0 24px; max-height: 560px; overflow: auto; box-shadow: inset 0 -18px 18px -18px rgba(0,0,0,.12); }
+  .post-body .ses-credit { font-size: 13px; border-top: 1px solid var(--beige-mid); padding-top: 18px; margin-top: 30px; }
+  .post-body .reg-sheet h2 { margin: 0; }
+  .post-body .reg-sheet p, .post-body .reg-sheet small { font-size: 12px; line-height: 1.45; margin: 2px 0 0; }
+  .post-body .reg-sheet ul.reg-sesgos { padding: 0; margin: 4px 0 0; }
+  .post-body .reg-sheet .reg-sesgos li { font-size: 12px; margin: 0; padding: 1px 0; }
+  .post-body .reg-sheet .reg-guide td { font-size: 12px; }
+  @media (prefers-reduced-motion: reduce) { .ses-bar span { transition: none; } }
